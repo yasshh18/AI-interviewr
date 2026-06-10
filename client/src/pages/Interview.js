@@ -25,7 +25,7 @@ function Interview() {
     setLoading(true)
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('https://ai-interviewr.onrender.com/api/interview', {
+      const response = await fetch('https://ai-interviewr.onrender.com/api/interview/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({ role, language, messages: newMessages })
@@ -65,7 +65,7 @@ function Interview() {
     setMessages([])
     try {
       const token = localStorage.getItem('token')
-      const response = await fetch('https://ai-interviewr.onrender.com/api/interview', {
+      const response = await fetch('https://ai-interviewr.onrender.com/api/interview/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({ role, language, messages: [{ role: 'user', content: 'Start the interview' }] })
