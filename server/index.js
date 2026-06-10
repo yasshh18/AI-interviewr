@@ -8,7 +8,7 @@ const interviewRoutes = require('./routes/interview')
 const app = express()
 
 app.use(cors({
-  origin: ['https://ai-interview-app-self.vercel.app', 'http://localhost:3000','https://ai-interviewr.onrender.com'],
+  origin: ['https://ai-interviewr-two.vercel.app', 'http://localhost:3000'],
   credentials: true
 }))
 app.use(express.json())
