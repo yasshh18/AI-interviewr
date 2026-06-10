@@ -10,7 +10,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch('https://ai-interviewr.onrender.com', {
+      const response = await fetch('https://ai-interviewr.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -18,7 +18,7 @@ function Login() {
       const data = await response.json()
       if (data.token) {
         localStorage.setItem('token', data.token)
-        navigate('/interview')
+        navigate('/interview') 
       } else {
         setError(data.message)
       }
